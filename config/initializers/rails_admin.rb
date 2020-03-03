@@ -1,5 +1,7 @@
 RailsAdmin.config do |config|
 
+  config.main_app_name = ["Comerciais", ""]
+
   ### Popular gems integration
 
   ## == Devise ==
@@ -11,6 +13,9 @@ RailsAdmin.config do |config|
   ## == CancanCan ==
    config.authorize_with :cancancan
 
+   config.model Sale do
+    navigation_icon 'fa fa-money'
+end
   ## == Pundit ==
   # config.authorize_with :pundit
 
@@ -125,4 +130,29 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+    config.model Discount do
+      parent Product
+    end
+    
+    config.model Sale do
+      parent User
+      weight -2
+    end
+    
+    config.model Comission do
+      parent User
+      weight -1
+    end
+    
+    config.model Client do
+      parent User
+    end
+    
+    config.model ProductQuantity do
+      visible false
+    end
+    
+    config.model Address do
+      visible false
+    end
   end
