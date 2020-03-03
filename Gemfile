@@ -8,6 +8,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'rails_admin'
 gem 'devise'
 gem 'cancancan'
+gem 'carrierwave'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
